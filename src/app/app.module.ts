@@ -16,11 +16,15 @@ import {MatLineModule} from '@angular/material/core';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
 import { DishService } from './services/dish.service';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    DishdetailComponent
+    DishdetailComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
