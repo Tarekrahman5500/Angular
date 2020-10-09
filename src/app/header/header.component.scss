@@ -5,7 +5,7 @@ $background-pale: #D1C4E9;
 $background-moredark: #4527A0;
 
 @mixin zero-margin($pad-up-down, $pad-left-right) {
-  margin: 0px auto;
+  margin: 0 auto;
   padding: $pad-up-down $pad-left-right;
 }
 
