@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Dish} from '../shared /dish';
-import {DishService} from '../services/dish.service';
 import {Promotion} from '../shared /promotion';
 import {PromotionService} from '../services/promotion.service';
 import {Leader} from '../shared /leader';
 import {LeaderService} from '../services/leader.service';
+import {DishService} from '../services/dish.service';
 
 @Component({
   selector: 'app-home',
@@ -23,11 +23,11 @@ export class HomeComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    this.dish = await this.dishservice.getFeaturedDish();
-    this.promotion = await this.promotionservice.getFeaturedPromotion()
+    this.dishservice.getFeaturedDish()
+      .then(dish => this.dish = dish);
+    this.promotionservice.getFeaturedPromotion()
       .then(promotion => this.promotion = promotion);
-
-    this.leader = await this.leaderservice.getFeaturedLeader()
+    this.leaderservice.getFeaturedLeader()
       .then(leader => this.leader = leader);
   }
 
